@@ -10,7 +10,7 @@ GENDER = (
 )
 
 COMMUNITY_TYPE = (
-    ('Clothing and Apparel', 'Clothing and Apparel'),
+    ('Clothing & Apparel', 'Clothing and Apparel'),
     ('Accessories', 'Accessories'),
     ('Arts', 'Arts'),
     ('Footwears & Canvas', 'Footwears & Canvas'),
