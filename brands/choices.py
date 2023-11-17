@@ -19,6 +19,7 @@ COMMUNITY_TYPE = (
     ('Skates', 'Skates'),
     ('Cap', 'Cap'),
     ('Masks', 'Masks'),
+    ('Gothic', 'Gothic'),
 )
 CLOTHING_CATEGORY= (
     ('Tops', 'Tops'),
