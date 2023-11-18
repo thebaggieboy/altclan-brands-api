@@ -161,12 +161,14 @@ REST_FRAMEWORK = {
     ],
    
 }
-
+SESSION_COOKIE_SAMESITE = 'None'
+SESSION_COOKIE_SECURE = True
 REST_AUTH = {
     
     'USE_JWT': True,
     'JWT_AUTH_COOKIE': 'brand_token',
     'JWT_AUTH_REFRESH_COOKIE': 'refresh-token',
+    
 }
 AUTHENTICATION_BACKENDS = ( 
 	'django.contrib.auth.backends.ModelBackend', 
