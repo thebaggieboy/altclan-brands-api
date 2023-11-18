@@ -170,7 +170,8 @@ REST_AUTH = {
     'JWT_AUTH_COOKIE': 'token',
     'JWT_AUTH_REFRESH_COOKIE': 'refresh-token',
     'JWT_AUTH_COOKIE_USE_CSRF':True,
-    'JWT_AUTH_SAMESITE': 'None'
+    'JWT_AUTH_SAMESITE': 'None',
+    'JWT_AUTH_SECURE': True
 }
 AUTHENTICATION_BACKENDS = ( 
 	'django.contrib.auth.backends.ModelBackend', 
