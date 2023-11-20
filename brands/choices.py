@@ -10,14 +10,14 @@ GENDER = (
 )
 
 COMMUNITY_TYPE = (
-    ('Clothing & Apparel', 'Clothing and Apparel'),
+    ('Clothing & Apparel', 'Clothing & Apparel'),
     ('Accessories', 'Accessories'),
-    ('Arts', 'Arts'),
+    ('Arts & Aesthetics', 'Arts & Aesthetics'),
     ('Footwears & Canvas', 'Footwears & Canvas'),
     ('Enigmas', 'Enigmas'),
-    ('Watches', 'Wristwatches & Handbands'),
+    ('Watches', 'Watches'),
     ('Skates', 'Skates'),
-    ('Cap', 'Cap'),
+    ('Caps', 'Caps'),
     ('Masks', 'Masks'),
     ('Gothic', 'Gothic'),
 )
