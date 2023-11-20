@@ -171,7 +171,7 @@ CSRF_TRUSTED_ORIGINS = ['https://altclanui.vercel.app/', 'https://altclan-brands
 REST_AUTH = {
     
     'USE_JWT': True,
-    'JWT_AUTH_COOKIE': 'token',
+    'JWT_AUTH_COOKIE': 'brand_token',
     'JWT_AUTH_REFRESH_COOKIE': 'refresh-token',
     'JWT_AUTH_COOKIE_USE_CSRF':False,
     'JWT_AUTH_SAMESITE': 'None',
