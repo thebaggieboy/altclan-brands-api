@@ -154,7 +154,7 @@ REST_FRAMEWORK = {
 
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
-        'rest_framework.authentication.SessionAuthentication',
+        #'rest_framework.authentication.SessionAuthentication',
         #'rest_framework.authentication.BasicAuthentication',
     ],
      'DEFAULT_PERMISSION_CLASSES': [
@@ -162,10 +162,10 @@ REST_FRAMEWORK = {
     ],
    
 }
-#SESSION_COOKIE_SAMESITE = 'None'
-#SESSION_COOKIE_SECURE = True
-#CSRF_COOKIE_SAMESITE = 'None'
-#CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SAMESITE = 'None'
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SAMESITE = 'None'
+CSRF_COOKIE_SECURE = True
 CSRF_TRUSTED_ORIGINS = ['https://altclanui.vercel.app/', 'https://altclan-api-v1.onrender.com', 'http://localhost:3000', 'http://127.0.0.1:3000', 'http://localhost:8000/', 'http://127.0.0.1:8000/']
 
 REST_AUTH = {
