@@ -5,15 +5,20 @@ STATUS = (
 )
 
 GENDER = (
-    ('M', 'Men'),
-    ('W', 'Women'),
+    ('Men', 'Men'),
+    ('Women', 'Women'),
+    ('Non-Binary', 'Non-Binary'),
 )
 
 COMMUNITY_TYPE = (
     ('Clothing & Apparel', 'Clothing & Apparel'),
+    ('Kids Clothing', 'Kids Clothing'),
     ('Accessories', 'Accessories'),
+    ('Jewelleries', 'Jewelleries'),
+    ('Resale wears', 'Resale wears'),
+    ('Thrift wears', 'Thrift wears'),
     ('Arts & Aesthetics', 'Arts & Aesthetics'),
-    ('Footwears & Canvas', 'Footwears & Canvas'),
+    ('Footwears', 'Footwears'),
     ('Enigmas', 'Enigmas'),
     ('Watches', 'Watches'),
     ('Skates', 'Skates'),
@@ -42,6 +47,8 @@ CLOTHING_CATEGORY= (
     ('Baggy Wears', 'Baggy Wears'),
     ('Tattoos', 'Tattoos'),
     ('Chains & Necklaces', 'Chains & Necklaces'),
+    ('Vintage Shirts', 'Vintage Shirts'),
+    ('Native Wears', 'Native Wears'),
     
 
 )

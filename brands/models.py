@@ -18,6 +18,7 @@ class Merchandise(models.Model):
     merchandise_size = models.CharField(max_length=250, default='')
     merchandise_description = models.TextField(default='')
     merchandise_details = models.TextField(default='')
+    merchandise_gender = models.CharField(choices=GENDER, default='', null=True, blank=True, max_length=250)
     display_image = models.ImageField(upload_to='Merch Image', default='')
     available_color_1 = models.CharField(max_length=250, null=True, blank=True)
     available_color_2 = models.CharField(max_length=250, null=True, blank=True)
