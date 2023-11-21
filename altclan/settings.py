@@ -162,12 +162,12 @@ REST_FRAMEWORK = {
     ],
    
 }
-SESSION_COOKIE_SAMESITE = 'None'
-SESSION_COOKIE_SECURE = True
+#SESSION_COOKIE_SAMESITE = 'None'
+#SESSION_COOKIE_SECURE = True
 #CSRF_COOKIE_SAMESITE = 'None'
 #CSRF_COOKIE_SECURE = True
+CSRF_TRUSTED_ORIGINS = ['https://altclanui.vercel.app/', 'https://altclan-api-v1.onrender.com', 'http://localhost:3000', 'http://127.0.0.1:3000', 'http://localhost:8000/', 'http://127.0.0.1:8000/']
 
-CSRF_TRUSTED_ORIGINS = ['https://altclanui.vercel.app/', 'https://altclan-brands-api.onrender.com/', 'http://localhost:3000', 'http://127.0.0.1:3000', 'http://localhost:8000/', 'http://127.0.0.1:8000/']
 REST_AUTH = {
     
     'USE_JWT': True,
@@ -197,8 +197,10 @@ CORS_ALLOWED_ORIGINS = [
     "https://altclan-api-v1.onrender.com",
     "https://altclanui.vercel.app"
 ]
+
 CORS_ALLOW_CREDENTIALS = True
 CORS_REPLACE_HTTPS_REFERER = True
+
 ACCOUNT_USER_MODEL_USERNAME_FIELD = 'email'
 AUTH_USER_MODEL = 'accounts.BrandUser'
 
