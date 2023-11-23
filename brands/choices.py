@@ -73,6 +73,7 @@ CLOTHING_CATEGORY= (
     ('Hoodies', 'Hoodies'),
     ('Baggy Wears', 'Baggy Wears'),
     ('Rings', 'Rings'),
+     ('Earrings', 'Earrings'),
     ('Joggers', 'Joggers'),
     ('Jeans', 'Jeans'),
     
