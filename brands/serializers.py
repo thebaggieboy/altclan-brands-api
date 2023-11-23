@@ -46,7 +46,7 @@ class MerchandiseAvailableSizesSerializer(serializers.HyperlinkedModelSerializer
     class Meta:
         model = MerchandiseAvailableSizes
         fields = [
-            'id', 'sizes',
+            'id', 'merchandise_name', 'sizes',
         ]
         
 
