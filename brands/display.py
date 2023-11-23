@@ -12,22 +12,9 @@ COLLECTION_DISPLAY = [
     ('Tees', 'Tees'),
     ('Rings', 'Rings'),
     ('Joggers', 'Joggers'),
-    ('Chains & Necklaces', 'Chains & Necklaces'),
+  
     ('Jeans', 'Jeans'),
-    ('Jackets', 'Jackets'),
-    ('Skating', 'Skating'),
-    ('Caps and Hats', 'Caps and Hats'),
-    ('Skating', 'Skating'),
-    ('Sweatshirts', 'Sweatshirts'),
-    ('Hoodies', 'Hoodies'),
-    ('Kicks & Slides', 'Kicks & Slides'),
-    ('Masks', 'Masks'),
-    ('Shades', 'Shades'),
-    ('Lumberjacks & Vintage', 'Lumberjacks and Vintage'),
-    ('Piercings & Studs', 'Piercings & Studs'),
-    ('Baggy Wears', 'Baggy Wears'),
-    ('Tattoos', 'Tattoos'),
-    ('Graffiti', 'Graffiti'),
+
 
 ]
 LABEL_DISPLAY = [
@@ -54,14 +41,21 @@ SIZES = (
     ('XL', 'XL'),
     ('XXL', 'XXL'),
     ('3XL', '3XL'),
+    ('3', '3'),
+    ('3.5', '3.5'),
+    ('4', '4'),
+    ('4.5', '4.5'),
+    ('5', '5'),
+    ('5.5', '5.5'),
     ('6', '6'),
-    ('7', '7'),
-    ('8', '8'),
-    ('9', '9'),
     ('6.5', '6.5'),
+    ('7', '7'),
     ('7.5', '7.5'),
+    ('8', '8'),
     ('8.5', '8.5'),
+    ('9', '9'),
     ('9.5', '9.5'),
+    ('37', '37'),
     ('38', '38'),
     ('39', '39'),
     ('40', '40'),
@@ -70,6 +64,8 @@ SIZES = (
     ('43', '43'),
     ('44', '44'),
     ('45', '45'),
+    ('46', '46'),
+    ('47', '47'),
    
 )
 

@@ -17,7 +17,7 @@ class Merchandise(models.Model):
     merchandise_color = models.CharField(max_length=250, default='')
     size_type = models.CharField(choices=MERCHANDISE_SIZE_TYPE, default='', null=True, blank=True, max_length=250)
     available_sizes = models.ManyToManyField('MerchandiseAvailableSizes')
-    
+    merchandise_type = models.CharField(choices=CLOTHING_CATEGORY, default='', null=True, blank=True, max_length=250)
     merchandise_description = models.TextField(default='')
     merchandise_details = models.TextField(default='')
     merchandise_gender = models.CharField(choices=GENDER, default='', null=True, blank=True, max_length=250)
