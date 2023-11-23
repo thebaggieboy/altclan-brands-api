@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Merchandise, Cart,  BillingAddress
+from .models import Merchandise, Cart,  BillingAddress, MerchandiseAvailableSizes
 from reviews.models import Reviews
 from accounts.models import BrandProfile
 
@@ -16,7 +16,7 @@ class BrandProfileAdmin(admin.ModelAdmin):
 
 class MerchandiseAdmin(admin.ModelAdmin):
     #inlines = [BrandInline]
-    list_display = ['brand_name', 'merchandise_name', 'merchandise_color', 'merchandise_size', 'display_image', 'labels',  'price', 'delivery_cost', 'slug']
+    list_display = ['brand_name', 'merchandise_name', 'merchandise_color', 'size_type', 'display_image', 'labels',  'price', 'delivery_cost', 'slug']
     list_filter = ['date_created']
 
 class BillingAddressAdmin(admin.ModelAdmin):
@@ -27,6 +27,7 @@ class BillingAddressAdmin(admin.ModelAdmin):
 admin.site.register(BillingAddress, BillingAddressAdmin)
 admin.site.register(BrandProfile, BrandProfileAdmin)
 admin.site.register(Merchandise, MerchandiseAdmin)
+admin.site.register(MerchandiseAvailableSizes)
 admin.site.register(Cart)
 admin.site.register(Reviews)
 

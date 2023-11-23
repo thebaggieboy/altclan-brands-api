@@ -19,6 +19,7 @@ router.register(r'payments', PaymentViewSet)
 router.register(r'coupons', CouponViewSet)
 router.register(r'refund', RefundViewSet)
 router.register(r'merchandises', MerchandiseViewSet)
+router.register(r'merchandise_available_sizes', MerchandiseAvailableSizesViewSet)
 
 urlpatterns = [
 

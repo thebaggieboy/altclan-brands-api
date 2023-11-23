@@ -2,24 +2,18 @@ from django.shortcuts import render
 from django.conf import settings
 from rest_framework import viewsets
 from accounts.models import BrandProfile, BrandUser
-from .models import  Cart, Merchandise, Leads, BrandDashboard
+from .models import  Cart, Merchandise, Leads, BrandDashboard, MerchandiseAvailableSizes
 from transactions.models import *
 
-from .serializers import(
-      
-      CartSerializer,
-      LeadsSerializer,
-      MerchandiseSerializer,
-      BrandProfileSerializer,
-      BrandUserSerializer,
-      BrandDashboardSerializer,
-      AddressSerializer
-      
-)
+from .serializers import *
  
 class MerchandiseViewSet(viewsets.ModelViewSet):
     queryset = Merchandise.objects.all()
     serializer_class = MerchandiseSerializer
+
+class MerchandiseAvailableSizesViewSet(viewsets.ModelViewSet):
+    queryset = MerchandiseAvailableSizes.objects.all()
+    serializer_class = MerchandiseAvailableSizesSerializer
 
 class LeadsViewSet(viewsets.ModelViewSet):
     queryset = Leads.objects.all()

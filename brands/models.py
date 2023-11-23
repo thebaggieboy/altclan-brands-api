@@ -2,9 +2,9 @@ import uuid
 from django.db import models
 from django.utils import timezone
 from django.template.defaultfilters import slugify
-from .display import LABEL_DISPLAY, COLLECTION_DISPLAY, COMMUNITY_TYPE_DISPLAY
+from .display import LABEL_DISPLAY, COLLECTION_DISPLAY, COMMUNITY_TYPE_DISPLAY, SIZES
 from django.conf import settings
-from .choices import STATUS, GENDER, COMMUNITY_TYPE, CLOTHING_CATEGORY
+from .choices import STATUS, GENDER, COMMUNITY_TYPE, CLOTHING_CATEGORY, MERCHANDISE_SIZE_TYPE
 
 BrandUser = settings.AUTH_USER_MODEL
 
@@ -15,7 +15,9 @@ class Merchandise(models.Model):
     brand_name = models.CharField(max_length=250, null=True, blank=True)
     merchandise_name = models.CharField(max_length=250, default='')
     merchandise_color = models.CharField(max_length=250, default='')
-    merchandise_size = models.CharField(max_length=250, default='')
+    size_type = models.CharField(choices=MERCHANDISE_SIZE_TYPE, default='', null=True, blank=True, max_length=250)
+    available_sizes = models.ManyToManyField('MerchandiseAvailableSizes')
+    
     merchandise_description = models.TextField(default='')
     merchandise_details = models.TextField(default='')
     merchandise_gender = models.CharField(choices=GENDER, default='', null=True, blank=True, max_length=250)
@@ -43,6 +45,17 @@ class Merchandise(models.Model):
         if not self.slug:
             self.slug = slugify(f'{self.id}')
         return super().save(*args, **kwargs)
+
+    
+class MerchandiseAvailableSizes(models.Model):
+    merchandise_name = models.OneToOneField(Merchandise, on_delete=models.CASCADE, related_name='size', null=True, blank=True)
+    sizes = models.CharField(choices=SIZES, default='', max_length=250, null=True, blank=True)
+    
+    
+    def __str__(self):
+        return f'Available Size : {self.sizes}'
+    
+
 
 # This class contains major analytics and data regarding a certain brand entity.
 class BrandDashboard(models.Model):

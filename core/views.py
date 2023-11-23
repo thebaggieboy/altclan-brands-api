@@ -25,6 +25,11 @@ class MerchandiseViewSet(viewsets.ModelViewSet):
     serializer_class = MerchandiseSerializer
 
 
+class MerchandiseAvailableSizesViewSet(viewsets.ModelViewSet):
+    queryset = MerchandiseAvailableSizes.objects.all()
+    serializer_class = MerchandiseAvailableSizesSerializer
+
+
 class LeadsViewSet(viewsets.ModelViewSet):
     queryset = Leads.objects.all()
     serializer_class = LeadsSerializer

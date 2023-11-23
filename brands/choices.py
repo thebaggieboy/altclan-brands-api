@@ -10,6 +10,15 @@ GENDER = (
     ('Non-Binary', 'Non-Binary'),
 )
 
+MERCHANDISE_SIZE_TYPE = (
+    ('',  ''),
+    ('Clothing Size',  'Clothing Size'),
+    ('Ring Size',  'Ring Size'),
+    ('Foot Size',  'Foot Size'),
+    ('Wrist Size',  'Wrist Size'),
+    
+)
+
 COMMUNITY_TYPE = (
     ('Clothing & Apparel', 'Clothing & Apparel'),
     ('Kids Clothing', 'Kids Clothing'),
