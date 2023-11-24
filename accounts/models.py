@@ -173,7 +173,7 @@ class BrandUser(AbstractBaseUser):
     )
     user_type = models.CharField(choices=USER_TYPE, max_length=250, default='brand' )
     brand_name = models.CharField(max_length=250, default='')
-    brand_logo = models.ImageField(upload_to='Brand Logos', default='')
+    brand_logo = models.URLField()
     brand_bio = models.TextField(default='')
     brand_type = models.CharField(choices=COMMUNITY_TYPE, default='', max_length=250)
     mobile_number = models.CharField(max_length=250, default='')
