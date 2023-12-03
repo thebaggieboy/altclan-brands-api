@@ -12,7 +12,7 @@ from .models import  Merchandise, MerchandiseAvailableSizes
 def create_merhcandise_sizes(sender, instance, created, **kwargs):
     if created:
  
-        MerchandiseAvailableSizes.objects.create(user=instance)
+        MerchandiseAvailableSizes.objects.create(merchandise_name=instance)
 
         print("Brand Profile & Address Created!")
 

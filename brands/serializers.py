@@ -38,7 +38,7 @@ class MerchandiseSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Merchandise
         fields = [
-            'id','brand_name', 'merchandise_name', 'size_type', 'available_sizes', 'merchandise_gender',  'merchandise_type', 'labels', 'delivery_cost', 'category', 'merchandise_description', 'merchandise_details', 'price', 'display_image',
+            'id','brand_name', 'merchandise_name', 'size_type',  'merchandise_gender',  'available_sizes', 'merchandise_type', 'labels', 'delivery_cost', 'category', 'merchandise_description', 'merchandise_details', 'price', 'display_image',
         ]
         
         

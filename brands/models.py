@@ -16,7 +16,7 @@ class Merchandise(models.Model):
     merchandise_name = models.CharField(max_length=250, default='')
     merchandise_color = models.CharField(max_length=250, default='')
     size_type = models.CharField(choices=MERCHANDISE_SIZE_TYPE, default='', null=True, blank=True, max_length=250)
-    available_sizes = models.ManyToManyField('MerchandiseAvailableSizes')
+    available_sizes = models.ManyToManyField('MerchandiseAvailableSizes',null=True, blank=True,)
     merchandise_type = models.CharField(choices=CLOTHING_CATEGORY, default='', null=True, blank=True, max_length=250)
     merchandise_description = models.TextField(default='')
     merchandise_details = models.TextField(default='')
@@ -48,12 +48,12 @@ class Merchandise(models.Model):
 
     
 class MerchandiseAvailableSizes(models.Model):
-    merchandise_name = models.OneToOneField(Merchandise, on_delete=models.CASCADE, related_name='size', null=True, blank=True)
+    merchandise_name = models.ForeignKey(Merchandise, on_delete=models.CASCADE, related_name='size', null=True, blank=True)
     sizes = models.CharField(choices=SIZES, default='', max_length=250, null=True, blank=True)
     
     
     def __str__(self):
-        return f'Available Size : {self.sizes}'
+        return f'Size : {self.sizes}'
     
 
 
