@@ -9,19 +9,12 @@ from .models import  Merchandise, MerchandiseAvailableSizes
 
 
 @receiver(post_save, sender=Merchandise)
-def create_merhcandise_sizes(sender, instance, created, **kwargs):
+def create_merchandise_sizes(sender, instance, created, **kwargs):
     if created:
  
-        MerchandiseAvailableSizes.objects.create(merchandise_name=instance)
+        MerchandiseAvailableSizes.objects.create(sizes=instance)
 
-        print("Brand Profile & Address Created!")
+        print("[NOTIFICATION] - Merchandise Size Created!")
 
-@receiver(post_save, sender=Merchandise)
-def save_brand_profile(sender, instance, **kwargs):
-    instance.size.save()
-    instance.availble_size.save()
-   
-    print("Brand MerchandiseSizes saved!")
-    print("Brand MerchandiseAvailableSizes!")
-   
+
 

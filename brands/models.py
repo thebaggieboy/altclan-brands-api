@@ -10,13 +10,11 @@ BrandUser = settings.AUTH_USER_MODEL
 
 # This is the item class
 class Merchandise(models.Model):
-    id = models.UUIDField(primary_key = True, default = uuid.uuid4, editable = False)
-    #brand = models.ForeignKey(BrandUser, on_delete=models.CASCADE,  null=True, blank=True)
     brand_name = models.CharField(max_length=250, null=True, blank=True)
     merchandise_name = models.CharField(max_length=250, default='')
     merchandise_color = models.CharField(max_length=250, default='')
     size_type = models.CharField(choices=MERCHANDISE_SIZE_TYPE, default='', null=True, blank=True, max_length=250)
-    available_sizes = models.ManyToManyField('MerchandiseAvailableSizes',null=True, blank=True,)
+    available_sizes = models.ManyToManyField('MerchandiseAvailableSizes', null=True, blank=True, default='', related_name='available_size')
     merchandise_type = models.CharField(choices=CLOTHING_CATEGORY, default='', null=True, blank=True, max_length=250)
     merchandise_description = models.TextField(default='')
     merchandise_details = models.TextField(default='')
@@ -32,9 +30,9 @@ class Merchandise(models.Model):
     image_5 = models.ImageField(upload_to='Merch Image', default='', null=True, blank=True)
     labels = models.CharField(max_length=250, choices=LABEL_DISPLAY, default='')
     price = models.IntegerField(null=True)
-    delivery_cost = models.IntegerField(null=True)
-    discount = models.IntegerField(null=True)
-    category = models.CharField(choices=COLLECTION_DISPLAY, default='', null=True, blank=True, max_length=250)
+    delivery_cost = models.FloatField(null=True, default=0.00)
+    discount = models.FloatField(null=True, default=0.00)
+    
     slug = models.SlugField()
     date_created = models.DateTimeField(default=timezone.now())
 
@@ -48,12 +46,12 @@ class Merchandise(models.Model):
 
     
 class MerchandiseAvailableSizes(models.Model):
-    merchandise_name = models.ForeignKey(Merchandise, on_delete=models.CASCADE, related_name='size', null=True, blank=True)
+    #merchandise_name = models.ForeignKey(Merchandise, on_delete=models.CASCADE, related_name='size', null=True, blank=True)
     sizes = models.CharField(choices=SIZES, default='', max_length=250, null=True, blank=True)
     
     
     def __str__(self):
-        return f'Size : {self.sizes}'
+        return f'{self.sizes}'
     
 
 
