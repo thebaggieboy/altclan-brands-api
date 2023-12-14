@@ -2,6 +2,7 @@ import uuid
 from django.db import models
 from django.utils import timezone
 from django.template.defaultfilters import slugify
+from django.contrib.postgres.fields import ArrayField
 from .display import LABEL_DISPLAY, COLLECTION_DISPLAY, COMMUNITY_TYPE_DISPLAY, SIZES
 from django.conf import settings
 from .choices import STATUS, GENDER, COMMUNITY_TYPE, CLOTHING_CATEGORY, MERCHANDISE_SIZE_TYPE
@@ -14,7 +15,7 @@ class Merchandise(models.Model):
     merchandise_name = models.CharField(max_length=250, default='')
     merchandise_color = models.CharField(max_length=250, default='')
     size_type = models.CharField(choices=MERCHANDISE_SIZE_TYPE, default='', null=True, blank=True, max_length=250)
-    available_sizes = models.ManyToManyField('MerchandiseAvailableSizes', null=True, blank=True, default='', related_name='available_size')
+    available_sizes = ArrayField(models.CharField(max_length=200), blank=True)
     merchandise_type = models.CharField(choices=CLOTHING_CATEGORY, default='', null=True, blank=True, max_length=250)
     merchandise_description = models.TextField(default='')
     merchandise_details = models.TextField(default='')
