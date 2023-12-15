@@ -1,1 +1,4 @@
 /venv
+/altclan-venv
+.db.sqlite3
+.env
