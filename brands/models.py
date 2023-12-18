@@ -15,7 +15,7 @@ class Merchandise(models.Model):
     merchandise_name = models.CharField(max_length=250, default='')
     merchandise_color = models.CharField(max_length=250, default='')
     size_type = models.CharField(choices=MERCHANDISE_SIZE_TYPE, default='', null=True, blank=True, max_length=250)
-    available_sizes = ArrayField(models.CharField(max_length=250),blank=True)
+    available_sizes = ArrayField(models.CharField(max_length=250),blank=True, null=True)
     #sizes = models.JSONField(null=True, blank=True,  default={})
     merchandise_type = models.CharField(choices=CLOTHING_CATEGORY, default='', null=True, blank=True, max_length=250)
     merchandise_description = models.TextField(default='')
