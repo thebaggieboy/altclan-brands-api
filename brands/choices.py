@@ -12,10 +12,12 @@ GENDER = (
 
 MERCHANDISE_SIZE_TYPE = (
     ('',  ''),
+    
     ('Clothing Size',  'Clothing Size'),
     ('Ring Size',  'Ring Size'),
     ('Foot Size',  'Foot Size'),
     ('Wrist Size',  'Wrist Size'),
+    ('Neck Size',  'Neck Size'),
     
 )
 
@@ -56,7 +58,7 @@ CLOTHING_CATEGORY= (
     ('Sweatshirts', 'Sweatshirts'),
     ('Hoodies', 'Hoodies'),
     ('Masks', 'Masks'),
-    ('Lumberjacks & Vintage', 'Lumberjacks and Vintage'),
+    ('Lumberjacks', 'Lumberjacks'),
     ('Piercings & Studs', 'Piercings & Studs'),
     ('Baggy Wears', 'Baggy Wears'),
     ('Tattoos', 'Tattoos'),
@@ -67,7 +69,7 @@ CLOTHING_CATEGORY= (
     ('Wallets', 'Wallets'),
     ('Bags', 'Bags'),
     ('Sunglasses', 'Sunglasses'),
-    ('Hats and Caps', 'Hats and Caps'),
+    ('Hats & Caps', 'Hats & Caps'),
     ('Belts', 'Belts'),
     ('Skating', 'Skating'),
     ('Hoodies', 'Hoodies'),
