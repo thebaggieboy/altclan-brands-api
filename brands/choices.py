@@ -11,8 +11,7 @@ GENDER = (
 )
 
 MERCHANDISE_SIZE_TYPE = (
-    ('',  ''),
-    
+    ('None',  'None'),
     ('clothing ',  'clothing '),
     ('rings ',  'rings '),
     ('foot ',  'foot '),
