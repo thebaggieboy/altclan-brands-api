@@ -13,11 +13,11 @@ GENDER = (
 MERCHANDISE_SIZE_TYPE = (
     ('',  ''),
     
-    ('Clothing Size',  'Clothing Size'),
-    ('Ring Size',  'Ring Size'),
-    ('Foot Size',  'Foot Size'),
-    ('Wrist Size',  'Wrist Size'),
-    ('Neck Size',  'Neck Size'),
+    ('clothing ',  'clothing '),
+    ('rings ',  'rings '),
+    ('foot ',  'foot '),
+    ('wrist ',  'wrist '),
+    ('neck ',  'neck '),
     
 )
 
