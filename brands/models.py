@@ -18,10 +18,10 @@ class Merchandise(models.Model):
     available_sizes = ArrayField(models.CharField(max_length=250),blank=True, null=True)
     available_colors = ArrayField(models.CharField(max_length=250),blank=True, null=True)
 
-    merchandise_type = models.CharField(choices=CLOTHING_CATEGORY, default='', null=True, blank=True, max_length=250)
+    merchandise_type = models.CharField(default='', null=True, blank=True, max_length=250)
     merchandise_description = models.TextField(default='')
     merchandise_details = models.TextField(default='')
-    merchandise_gender = models.CharField(choices=GENDER, default='', null=True, blank=True, max_length=250)
+    merchandise_gender = models.CharField( default='', null=True, blank=True, max_length=250)
     display_image = models.URLField()
     
     image_1 = models.ImageField(upload_to='Merch Image', default='', null=True, blank=True)
