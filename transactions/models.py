@@ -1,11 +1,13 @@
 from django.db import models
 from django.conf import settings
-from accounts.models import User
 import uuid
 from django.utils import timezone
 from django.utils.crypto import get_random_string
 from brands.models import BillingAddress
 from django.utils.text import slugify
+from django.conf import settings
+
+User = settings.AUTH_USER_MODEL
 RANDOM_ORDER_ID = get_random_string(length=8)
 
 STATUS = (
@@ -15,8 +17,8 @@ STATUS = (
 
 # Create your models here.
 class Order(models.Model): 
-    id = models.UUIDField(primary_key = True, default = uuid.uuid4().hex, editable = False)
-    #user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
+    #id = models.UUIDField(primary_key = True, default = uuid.uuid4().hex, editable = False)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True,  related_name='user_order', blank=True)
     #address = models.ForeignKey(BillingAddress, on_delete=models.CASCADE)
     tracking_number = models.CharField(max_length=250, default=get_random_string(length=12))
     number_of_items = models.IntegerField(null=True)
@@ -30,8 +32,9 @@ class Order(models.Model):
 
 
 class Payment(models.Model):
-    
-    #paystack_charge_id = models.CharField(max_length=50, default='', null=True, blank=True)
+    #id = models.UUIDField(primary_key = True, default = uuid.uuid4, editable = False, )
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
+    paystack_charge_id = models.CharField(max_length=50, default='', null=True, blank=True)
     #user = models.ForeignKey(settings.User, on_delete=models.CASCADE, blank=True, null=True)
     amount = models.FloatField()
     status = models.CharField(max_length=250, choices=STATUS, default='P', null=True, blank=True)
@@ -43,7 +46,7 @@ class Payment(models.Model):
 
 
 class Coupon(models.Model):
-    id = models.UUIDField(primary_key = True, default = uuid.uuid4, editable = False)
+    #id = models.UUIDField(primary_key = True, default = uuid.uuid4, editable = False)
     code = models.CharField(max_length=15)
     amount = models.FloatField()
 
@@ -52,11 +55,11 @@ class Coupon(models.Model):
 
 
 class Refund(models.Model):
-    id = models.UUIDField(primary_key = True, default = uuid.uuid4, editable = False)
+    #id = models.UUIDField(primary_key = True, default = uuid.uuid4, editable = False)
     order = models.ForeignKey(Order, on_delete=models.CASCADE, null=True, blank=True)
     reason = models.TextField()
     accepted = models.BooleanField(default=False)
     email = models.EmailField()
 
     def __str__(self):
-        return f"{self.id}"
+        return f"{self.reason}"
