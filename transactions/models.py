@@ -17,11 +17,16 @@ STATUS = (
 
 # Create your models here.
 class Order(models.Model): 
-    #id = models.UUIDField(primary_key = True, default = uuid.uuid4().hex, editable = False)
-    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True,  related_name='user_order', blank=True)
-    #address = models.ForeignKey(BillingAddress, on_delete=models.CASCADE)
+
+
+    name_of_item = models.CharField(max_length=250, blank=True)
+    user_email = models.CharField(max_length=250, blank=True)
+    name_of_brand = models.CharField(max_length=250, blank=True)
+    amount_per_item = models.CharField(max_length=250, blank=True)
+    quantity = models.CharField(max_length=250, blank=True)
     tracking_number = models.CharField(max_length=250, default=get_random_string(length=12))
     number_of_items = models.IntegerField(null=True)
+    address = models.CharField(max_length=250, blank=True)
     ordered = models.BooleanField(default=False)
     delivered = models.BooleanField(default=False)
     order_date = models.DateTimeField(default=timezone.now())
@@ -33,12 +38,12 @@ class Order(models.Model):
 
 class Payment(models.Model):
     #id = models.UUIDField(primary_key = True, default = uuid.uuid4, editable = False, )
-    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
+    user_email = models.CharField(max_length=250, blank=True)
+    full_name = models.CharField(max_length=250, blank=True)
     paystack_charge_id = models.CharField(max_length=50, default='', null=True, blank=True)
-    #user = models.ForeignKey(settings.User, on_delete=models.CASCADE, blank=True, null=True)
     amount = models.FloatField()
-    status = models.CharField(max_length=250, choices=STATUS, default='P', null=True, blank=True)
-    order = models.ForeignKey(Order, on_delete=models.CASCADE, blank=True, null=True)
+    status = models.CharField(max_length=250, choices=STATUS, null=True, blank=True)
+    #order = models.ForeignKey(Order, on_delete=models.CASCADE, blank=True, null=True)
     timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
