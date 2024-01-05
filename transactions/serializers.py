@@ -11,7 +11,7 @@ class OrderSerializer(serializers.HyperlinkedModelSerializer):
 class PaymentSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Payment
-        fields = [  'amount', 'status', 'timestamp']
+        fields = [ 'user_email', 'full_name', 'paystack_charge_id',  'amount', 'status', 'timestamp']
 
 
 class CouponSerializer(serializers.HyperlinkedModelSerializer):
