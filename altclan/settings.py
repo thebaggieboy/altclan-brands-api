@@ -29,6 +29,8 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.postgres',
     'django.contrib.staticfiles',
+    'auctions',
+    'communities',
     'core.apps.CoreConfig',
     'brands.apps.BrandsConfig',
     'accounts.apps.AccountConfig',
