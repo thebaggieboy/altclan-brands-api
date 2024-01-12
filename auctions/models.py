@@ -1,10 +1,11 @@
 from django.db import models
 from django.utils import timezone
 from django.template.defaultfilters import slugify
-
+import uuid
 
 # Create your models here.
 class Auctions(models.Model):
+    
     product_name = models.CharField(max_length=250, null=True, blank=True)
     product_description = models.TextField(default='')
     display_image = models.URLField()

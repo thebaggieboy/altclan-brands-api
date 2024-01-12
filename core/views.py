@@ -8,7 +8,8 @@ from reviews.models import *
 from reviews.serializers import *
 from transactions.serializers import *
 from transactions.models import *
-
+from auctions.models import Auctions
+from auctions.serializers import AuctionSerializer
 
 
 class ProfileViewSet(viewsets.ModelViewSet):
@@ -63,7 +64,10 @@ class PaymentViewSet(viewsets.ModelViewSet):
     queryset = Payment.objects.all()
     serializer_class = PaymentSerializer
     
-
+class AuctionViewSet():
+    queryset = Auctions.objects.all()
+    serializer_class = AuctionSerializer
+    
 
 class CouponViewSet(viewsets.ModelViewSet):
     queryset = Coupon.objects.all()
