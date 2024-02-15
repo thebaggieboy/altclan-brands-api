@@ -12,7 +12,7 @@ from reviews.views import *
 from rest_framework_simplejwt import views as jwt_views
 
 router = routers.DefaultRouter()
-router.register(r'auctions', AuctionViewSet)
+#router.register(r'auctions', AuctionViewSet)
 router.register(r'brand_users', BrandUserViewSet)
 router.register(r'brand_profile', ProfileViewSet)
 router.register(r'brand_dashboard', BrandDashboardViewSet)

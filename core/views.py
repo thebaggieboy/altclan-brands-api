@@ -64,10 +64,6 @@ class PaymentViewSet(viewsets.ModelViewSet):
     queryset = Payment.objects.all()
     serializer_class = PaymentSerializer
     
-class AuctionViewSet():
-    queryset = Auctions.objects.all()
-    serializer_class = AuctionSerializer
-    
 
 class CouponViewSet(viewsets.ModelViewSet):
     queryset = Coupon.objects.all()
