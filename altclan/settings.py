@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'core.apps.CoreConfig',
     'brands.apps.BrandsConfig',
     'accounts.apps.AccountConfig',
+    'models.apps.ModelsConfig',
     'transactions.apps.TransactionsConfig',
     'reviews',
     'allauth',
