@@ -8,7 +8,7 @@ from .serializers import *
  
 class MerchandiseViewSet(viewsets.ModelViewSet):
     queryset = Auctions.objects.all()
-    serializer_class = AuctionSerializer
+    serializer_class = Mer
     
 
 

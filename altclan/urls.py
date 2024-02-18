@@ -6,7 +6,7 @@ from django.conf.urls.static import static
 from rest_framework import routers
 from core.views import *
 from accounts.views import *
-from auctions.views import *
+from brands.views import *
 from reviews.views import *
 
 from rest_framework_simplejwt import views as jwt_views
