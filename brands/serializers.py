@@ -46,7 +46,7 @@ class AestheticsSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Aesthetics
         fields = [
-            'id','aesthetic_name'
+            'id','aesthetic_name', 'aesthetic_image'
         ]
         
              
