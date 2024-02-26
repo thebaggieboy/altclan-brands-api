@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
-from .models import  Merchandise, Cart, Leads, BrandDashboard, BillingAddress, MerchandiseAvailableSizes
+from .models import  Merchandise, Cart, Leads, BrandDashboard, BillingAddress, MerchandiseAvailableSizes, Aesthetics
 from django.conf import settings
 from accounts.models import BrandProfile
 
@@ -42,6 +42,14 @@ class MerchandiseSerializer(serializers.HyperlinkedModelSerializer):
         ]
         
         
+class AestheticsSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Aesthetics
+        fields = [
+            'id','aesthetic_name'
+        ]
+        
+             
 class MerchandiseAvailableSizesSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = MerchandiseAvailableSizes

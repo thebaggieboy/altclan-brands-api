@@ -73,7 +73,19 @@ class BrandDashboard(models.Model):
     def __str__(self):
         return f'{self.user} Dashboard'
 
+class Aesthetics(models.Model):
+    id = models.UUIDField(primary_key = True, default = uuid.uuid4, editable = False)
+    aesthetic_name = models.CharField(max_length=250, null=True, blank=True)
+    aesthetic_image = models.ImageField()
+   
+    slug = models.SlugField(null=True, blank=True, default='')
+    def __str__(self):
+        return f'Brands Aesthetics'
 
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(f'{self.aesthetic_name}')
+        return super().save(*args, **kwargs)
 
 
 

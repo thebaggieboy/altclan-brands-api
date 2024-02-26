@@ -20,6 +20,11 @@ class ReviewViewSet(viewsets.ModelViewSet):
     queryset = Reviews.objects.all()
     serializer_class = ReviewSerializer
 
+class AestheticsViewSet(viewsets.ModelViewSet):
+    queryset = Aesthetics.objects.all()
+    serializer_class = AestheticsSerializer
+
+
 
 class MerchandiseViewSet(viewsets.ModelViewSet):
     queryset = Merchandise.objects.all()
