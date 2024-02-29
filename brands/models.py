@@ -17,13 +17,11 @@ class Merchandise(models.Model):
     size_type = models.CharField(default='', null=True, blank=True, max_length=250)
     available_sizes = ArrayField(models.CharField(max_length=250),blank=True, null=True)
     available_colors = ArrayField(models.CharField(max_length=250),blank=True, null=True)
-
     merchandise_type = models.CharField(default='', null=True, blank=True, max_length=250)
     merchandise_description = models.TextField(default='')
     merchandise_details = models.TextField(default='')
     merchandise_gender = models.CharField( default='', null=True, blank=True, max_length=250)
     display_image = models.URLField()
-    
     image_1 = models.ImageField(upload_to='Merch Image', default='', null=True, blank=True)
     image_2 = models.ImageField(upload_to='Merch Image', default='', null=True, blank=True)
     image_3 = models.ImageField(upload_to='Merch Image', default='', null=True, blank=True)
