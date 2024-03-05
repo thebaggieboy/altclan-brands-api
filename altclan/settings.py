@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'communities',
     'core.apps.CoreConfig',
     'brands.apps.BrandsConfig',
+    'blog.apps.BlogConfig',
     'accounts.apps.AccountConfig',
     'models.apps.ModelsConfig',
     'transactions.apps.TransactionsConfig',
