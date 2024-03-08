@@ -10,6 +10,7 @@ from .serializers import *
 class MerchandiseViewSet(viewsets.ModelViewSet):
     queryset = Merchandise.objects.all()
     serializer_class = MerchandiseSerializer
+    order_by = ['date_created']
 
 class AestheticsViewSet(viewsets.ModelViewSet):
     queryset = Aesthetics.objects.all()
