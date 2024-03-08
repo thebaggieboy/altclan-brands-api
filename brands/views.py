@@ -8,9 +8,9 @@ from transactions.models import *
 from .serializers import *
  
 class MerchandiseViewSet(viewsets.ModelViewSet):
-    queryset = Merchandise.objects.all()
+    queryset = Merchandise.objects.all().order_by('-date_created').values()
     serializer_class = MerchandiseSerializer
-    order_by = ['date_created']
+    #order_by = ['date_created']
 
 class AestheticsViewSet(viewsets.ModelViewSet):
     queryset = Aesthetics.objects.all()
