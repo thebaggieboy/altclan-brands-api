@@ -10,7 +10,7 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 class BrandUserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = BrandUser
-        fields = ['id','user_type',  'email', 'brand_name', 'brand_logo',  'brand_bio', 'brand_type', 'mobile_number', 'followers']
+        fields = ['id','user_type',  'email', 'brand_name', 'brand_logo',  'brand_bio', 'brand_type', 'mobile_number', 'followers', 'date_created']
 
 class ProfileSerializer(serializers.HyperlinkedModelSerializer):
     user = serializers.HyperlinkedRelatedField(view_name='profile-detail',queryset=Profile.objects.all())

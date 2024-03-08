@@ -21,7 +21,7 @@ class ProfileViewSet(viewsets.ModelViewSet):
     serializer_class = BrandProfileSerializer
 
 class BrandUserViewSet(viewsets.ModelViewSet):
-    queryset = BrandUser.objects.all()
+    queryset = BrandUser.objects.all().order_by('-date_created').values()
     serializer_class = BrandUserSerializer
 
 class BrandDashboardViewSet(viewsets.ModelViewSet):
