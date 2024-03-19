@@ -9,7 +9,7 @@ from .serializers import BlogSerializer
 
 
 
-class ReviewViewSet(viewsets.ModelViewSet):
+class BlogViewSet(viewsets.ModelViewSet):
     queryset = Blog.objects.all()
     serializer_class = BlogSerializer
 

@@ -208,7 +208,7 @@ CORS_ALLOWED_ORIGINS = [
     "https://altclan-api-v1.onrender.com",
     "https://altclanui.vercel.app",
     'https://altclan.store',
-    'altclan.store'
+
 ]
 
 CORS_ALLOW_METHODS = (

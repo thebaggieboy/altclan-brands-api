@@ -8,16 +8,18 @@ from core.views import *
 from accounts.views import *
 from brands.views import *
 from reviews.views import *
-
+from blog.views import *
 from rest_framework_simplejwt import views as jwt_views
 
 router = routers.DefaultRouter()
 #router.register(r'auctions', AuctionViewSet)
+
 router.register(r'brand_users', BrandUserViewSet)
 router.register(r'brand_profile', ProfileViewSet)
 router.register(r'brand_dashboard', BrandDashboardViewSet)
 router.register(r'aesthetics', AestheticsViewSet)
 router.register(r'brand_address', AddressViewSet)
+router.register(r'blog', BlogViewSet)
 router.register(r'leads', LeadsViewSet)
 router.register(r'orders', OrderViewSet)
 router.register(r'payments', PaymentViewSet)
