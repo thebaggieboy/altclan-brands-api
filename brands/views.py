@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.conf import settings
 from rest_framework import viewsets
 from accounts.models import BrandProfile, BrandUser
-from .models import  Cart, Merchandise, Leads, BrandDashboard, MerchandiseAvailableSizes, Aesthetics
+from .models import  WishList, Merchandise, Leads, BrandDashboard, MerchandiseAvailableSizes, Aesthetics
 from transactions.models import *
 
 from .serializers import *
@@ -33,9 +33,9 @@ class AddressViewSet(viewsets.ModelViewSet):
 
 
 
-class CartViewSet(viewsets.ModelViewSet):
-    queryset = Cart.objects.all()
-    serializer_class = CartSerializer
+class WishListViewSet(viewsets.ModelViewSet):
+    queryset = WishList.objects.all()
+    serializer_class = WishListSerializer
 
 # Create your views here.
 class BrandDashboardViewSet(viewsets.ModelViewSet):

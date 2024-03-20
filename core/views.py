@@ -44,9 +44,9 @@ class AddressViewSet(viewsets.ModelViewSet):
     queryset = BillingAddress.objects.all()
     serializer_class = AddressSerializer
 
-class CartViewSet(viewsets.ModelViewSet):
-    queryset = Cart.objects.all()
-    serializer_class = CartSerializer
+class WishListViewSet(viewsets.ModelViewSet):
+    queryset = WishList.objects.all()
+    serializer_class = WishListSerializer
 
 # Create your views here.
 

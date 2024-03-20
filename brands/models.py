@@ -127,7 +127,7 @@ class UserBillingAddress(models.Model):
 # Inherits from brand
 
 
-class Cart(models.Model):
+class WishList(models.Model):
     #id = models.UUIDField(primary_key = True, default = uuid.uuid4, editable = False)
     user = models.OneToOneField(BrandUser, on_delete=models.CASCADE, null=True, blank=True)
     quantity = models.IntegerField(null=True, blank=True)

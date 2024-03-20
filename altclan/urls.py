@@ -28,6 +28,7 @@ router.register(r'refund', RefundViewSet)
 router.register(r'merchandises', MerchandiseViewSet)
 router.register(r'merchandise_available_sizes', MerchandiseAvailableSizesViewSet)
 router.register(r'reviews', ReviewViewSet)
+router.register(r'wishlist', WishListViewSet)
 
 
 urlpatterns = [

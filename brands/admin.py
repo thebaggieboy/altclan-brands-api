@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Merchandise, Cart,  BillingAddress, MerchandiseAvailableSizes
+from .models import Merchandise, WishList,  BillingAddress, MerchandiseAvailableSizes
 from reviews.models import Reviews
 from accounts.models import BrandProfile
 
@@ -28,7 +28,7 @@ admin.site.register(BillingAddress, BillingAddressAdmin)
 admin.site.register(BrandProfile, BrandProfileAdmin)
 admin.site.register(Merchandise, MerchandiseAdmin)
 admin.site.register(MerchandiseAvailableSizes)
-admin.site.register(Cart)
+admin.site.register(WishList)
 admin.site.register(Reviews)
 
 
