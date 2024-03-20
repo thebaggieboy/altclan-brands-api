@@ -62,4 +62,4 @@ class MerchandiseAvailableSizesSerializer(serializers.HyperlinkedModelSerializer
 class WishListSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = WishList
-        fields = ['id','quantity', 'merchandises']
+        fields =  ['id','quantity', 'merchandises', 'merchandise_name', 'merchandise_color', 'available_sizes', 'available_colors', 'size_type', 'merchandise_description', 'merchandise_details ', 'merchandise_id', 'display_image', 'price']
