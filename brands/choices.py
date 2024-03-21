@@ -64,8 +64,7 @@ CLOTHING_CATEGORY= (
     ('Chains & Necklaces', 'Chains & Necklaces'),
     ('Vintage Shirts', 'Vintage Shirts'),
     ('Native Wears', 'Native Wears'),
-    ('Watches', 'Watches'),
-    ('Wallets', 'Wallets'),
+   
     ('Bags', 'Bags'),
     ('Sunglasses', 'Sunglasses'),
     ('Hats & Caps', 'Hats & Caps'),
