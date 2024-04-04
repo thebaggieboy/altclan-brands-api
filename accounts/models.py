@@ -176,7 +176,7 @@ class BrandUser(AbstractBaseUser):
     brand_logo = models.URLField()
     brand_bio = models.TextField(default='')
     brand_type = models.CharField(choices=COMMUNITY_TYPE, default='', max_length=250)
-    followers = ArrayField(models.CharField(max_length=250),blank=True, null=True)
+    #followers = ArrayField(models.CharField(max_length=250),blank=True, null=True)
     mobile_number = models.CharField(max_length=250, default='')
     slug = models.SlugField(null=True, blank=True, default='')
     billing_address = models.CharField(max_length=250, default='')
