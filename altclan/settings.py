@@ -209,7 +209,7 @@ CORS_ALLOWED_ORIGINS = [
     "https://altclanui.vercel.app",
     'https://altclan.store',
     'https://altclanstore.vercel.app',
-    '16.171.116.13'
+    'http://16.171.116.13'
 
 ]
 
