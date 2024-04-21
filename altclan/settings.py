@@ -1,6 +1,7 @@
 import os
 from datetime import timedelta
 from pathlib import Path
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -10,12 +11,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-#ioqb6nvy+hwu5(%r@(dv!6zztc7vb*+j63uie9ruvhihr5*oe'
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['16.171.116.13', 'altclanui.vercel.app', 'altclanstore.vercel.app', 'altclan-brands-api.onrender.com', 'localhost:3000', '127.0.0.1:3000', 'localhost', '127.0.0.1', 'altclan.store']
+ALLOWED_HOSTS = ['16.171.116.13', 'altclanstore.vercel.app', 'altclan-brands-api.onrender.com', 'localhost', '127.0.0.1', 'altclan.store']
 
 
 # Application definition
@@ -94,10 +95,10 @@ WSGI_APPLICATION = 'altclan.wsgi.application'
 DATABASES = {
    'default': {
        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-       'NAME': 'altclan_6xww',
-       'USER': 'altclan_6xww_user',
-       'PASSWORD': '6LfHLeKSCKyTWpvOO9OP4EdxDlD1vLTO',
-       'HOST': 'dpg-cogjj17sc6pc73d69upg-a.oregon-postgres.render.com',
+       'NAME': os.getenv('DATABASE_NAME'),
+       'USER': os.getenv('USER'),
+       'PASSWORD': os.getenv('PASSWORD'),
+       'HOST': os.getenv('HOST'),
        'PORT': '5432',
    }
 }
@@ -145,7 +146,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 SITE_ID = 1
 
@@ -175,7 +175,7 @@ SESSION_COOKIE_SAMESITE = 'None'
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SAMESITE = 'None'
 CSRF_COOKIE_SECURE = True
-CSRF_TRUSTED_ORIGINS = ['htpp://16.171.116.13', '16.171.116.13', 'https://altclanui.vercel.app/', 'https://altclanstore.vercel.app/', 'altclanstore.vercel.app/', 'https://altclan-api-v1.onrender.com', 'http://localhost:3000', 'http://127.0.0.1:3000', 'http://localhost:8000/', 'http://127.0.0.1:8000/', 'https://altclan.store', 'altclan.store']
+CSRF_TRUSTED_ORIGINS = ['http://16.171.116.13', '16.171.116.13', 'https://altclanui.vercel.app/', 'https://altclanstore.vercel.app/', 'altclanstore.vercel.app/', 'https://altclan-api-v1.onrender.com', 'http://localhost:3000', 'http://127.0.0.1:3000', 'http://localhost:8000/', 'http://127.0.0.1:8000/', 'https://altclan.store', 'altclan.store']
 
 REST_AUTH = {
     
