@@ -55,11 +55,12 @@ INSTALLED_APPS = [
 
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'corsheaders.middleware.CorsPostCsrfMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
-    'corsheaders.middleware.CorsPostCsrfMiddleware',
+
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -176,7 +177,7 @@ SESSION_COOKIE_SAMESITE = 'None'
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SAMESITE = 'None'
 CSRF_COOKIE_SECURE = True
-CSRF_TRUSTED_ORIGINS = ['http://16.171.116.13', '16.171.116.13', 'https://altclanui.vercel.app/', 'https://altclanstore.vercel.app/', 'altclanstore.vercel.app/', 'https://altclan-api-v1.onrender.com', 'http://localhost:3000', 'http://127.0.0.1:3000', 'http://localhost:8000/', 'http://127.0.0.1:8000/', 'https://altclan.store', 'altclan.store']
+CSRF_TRUSTED_ORIGINS = ['https://*.altclan.store', 'altclan.store']
 
 REST_AUTH = {
     
@@ -199,20 +200,9 @@ SIMPLE_JWT = {
     'ROTATE_REFRESH_TOKENS': False,
 }
 
-#CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_ALLOW_ALL = True
 #CORS_ALLOW_ALL_ORIGINS =  True
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
-    "http://altclan-brands-api.onrender.com",
-    "https://altclan-api-v1.onrender.com",
-    "https://altclanui.vercel.app",
-    'https://altclan.store',
-    'https://altclanstore.vercel.app',
-    'http://16.171.116.13'
-
-]
 
 CORS_ALLOW_METHODS = (
     "DELETE",
